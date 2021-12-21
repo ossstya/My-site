@@ -14,9 +14,9 @@ def works(request):
 
 
 def work(request, pk):
-
-    context = {}
-    return render(request, 'portfolioapp/work.html')
+    the_work = Work.objects.get(pk=pk)
+    context = {"work": the_work}
+    return render(request, 'portfolioapp/work.html', context)
 
 
 def contact(request):
