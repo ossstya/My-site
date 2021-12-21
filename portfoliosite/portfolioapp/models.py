@@ -2,7 +2,8 @@ from django.db import models
 
 
 class Work(models.Model):
-    title = models.CharField(max_length=50)
+    title = models.CharField(max_length=150)
+    # title_of_card = models.CharField(max_length=100)
     body = models.TextField()
     title_image = models.ImageField(upload_to='work_title_image/',
                                     null=True,

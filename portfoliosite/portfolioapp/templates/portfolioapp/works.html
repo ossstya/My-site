@@ -21,82 +21,62 @@
         <div class="carousel-inner">
             <div class="item active">
                 <div class="row">
+                    {% for work in works %}
+                    {% if work.id < 4 %}
                     <div class="col-sm-4">
-
-                      <a href="./work.html" title="" class="black-image-project-hover">
-                        <img src="./assets/images/work01-hover.jpg" alt="" class="img-responsive">
+                      <a href="{% url 'work' work.id %}" title="" class="black-image-project-hover">
+                        <img src="{{ work.title_image.url }}" alt="" class="img-responsive">
                       </a>
                       <div class="card-container card-container-lg">
-                        <h4>001/006</h4>
-                        <h3>Fringilla sit amet</h3>
-                        <p>Nulla facilisi. Vivamus vestibulum, elit in scelerisque ultricies.</p>
-                        <a href="./work.html" title="" class="btn btn-default">Discover</a>
+                        <h4>00{{work.id}}/006</h4>
+                        <h3>{{ work.title }}</h3>
+                        <p>{{work.id}}</p>
+                        <a href="{% url 'work' work.id %}" title="" class="btn btn-default">Discover</a>
                       </div>
                     </div>
-                    <div class="col-sm-4">
-                      <a href="./work.html" title="" class="black-image-project-hover">
-                        <img src="./assets/images/work02-hover.jpg" alt="" class="img-responsive">
-                      </a>
-                      <div class="card-container card-container-lg">
-                        <h4>002/006</h4>
-                        <h3>Nulla scelerisque</h3>
-                        <p>Proin pharetra metus id iaculis dignissim. In aliquet lorem ut ex ullamcorper.</p>
-                        <a href="./work.html" title="" class="btn btn-default">Discover</a>
-                      </div>
-                    </div>
-                    <div class="col-sm-4">
-                      <a href="./work.html" title="" class="black-image-project-hover">
-                        <img src="./assets/images/work03-hover.jpg" alt="" class="img-responsive">
-                      </a>
-                      <div class="card-container card-container-lg">
-                        <h4>003/006</h4>
-                        <h3>Vivamus vestibulum</h3>
-                        <p>Fusce sed hendrerit augue, a rhoncus velit. In non lorem mattis, tempor sem sit amet.</p>
-                        <a href="./work.html" title="" class="btn btn-default">Discover</a>
-                      </div>
-                    </div>
-
+                    {% endif %}
+                    {% endfor %}
                 </div>
                 <!--/row-->
             </div>
             <!--/item-->
             <div class="item">
                 <div class="row">
+                    {% for work in works %}
+                    {% if work.id >= 4 and work.id < 7 %}
                   <div class="col-sm-4">
-                    <a href="./work.html" class="black-image-project-hover">
-                      <img src="./assets/images/work02-hover.jpg" alt="Image" class="img-responsive">
+                    <a href="{% url 'work' work.id %}" class="black-image-project-hover">
+                      <img src=" {{ work.title_image.url }} " alt="Image" class="img-responsive">
                     </a>
                     <div class="card-container">
-                      <h4>004/006</h4>
-                      <h3>Nulla scelerisque</h3>
-                      <p>Proin pharetra metus id iaculis dignissim. In aliquet lorem ut ex ullamcorper.</p>
-                      <a href="./work.html" class="btn btn-default">Discover</a>
+                      <h4>00{{work.id}}/006</h4>
+                      <h3>{{ work.title }}</h3>
+                      <p>{{work.id}}</p>
+                      <a href="{% url 'work' work.id %}" class="btn btn-default">Discover</a>
                     </div>
                   </div>
-                   <div class="col-sm-4">
-                      <a href="./work.html" class="black-image-project-hover">
-                        <img src="./assets/images/work01-hover.jpg" alt="Image" class="img-responsive">
-                      </a>
-                      <div class="card-container">
-                        <h4>005/006</h4>
-                        <h3>Fringilla sit amet</h3>
-                        <p>Nulla facilisi. Vivamus vestibulum, elit in scelerisque ultricies.</p>
-                        <a href="./work.html" class="btn btn-default">Discover</a>
-                      </div>
+                    {% endif %}
+                    {% endfor %}
+                </div>
+                <!--/row-->
+            </div>
+            <div class="item">
+                <div class="row">
+                    {% for work in works %}
+                    {% if work.id >= 7 and work.id < 10 %}
+                  <div class="col-sm-4">
+                    <a href="{% url 'work' work.id %}" class="black-image-project-hover">
+                      <img src=" {{ work.title_image.url }} " alt="Image" class="img-responsive">
+                    </a>
+                    <div class="card-container">
+                      <h4>00{{work.id}}/006</h4>
+                      <h3>{{ work.title }}</h3>
+                      <p>Proin pharetra metus id iaculis dignissim. In aliquet lorem ut ex ullamcorper.</p>
+                      <a href="{% url 'work' work.id %}" class="btn btn-default">Discover</a>
                     </div>
-
-                    <div class="col-sm-4">
-                      <a href="./work.html" class="black-image-project-hover">
-                        <img src="./assets/images/work03-hover.jpg" alt="Image" class="img-responsive">
-                      </a>
-                      <div class="card-container">
-                        <h4>006/006</h4>
-                        <h3>Vivamus vestibulum</h3>
-                        <p>Fusce sed hendrerit augue, a rhoncus velit. In non lorem mattis, tempor sem sit amet.</p>
-                        <a href="./work.html" class="btn btn-default">Discover</a>
-                      </div>
-                    </div>
-
+                  </div>
+                    {% endif %}
+                    {% endfor %}
                 </div>
                 <!--/row-->
             </div>
@@ -119,7 +99,6 @@
     </div>
   </div>
 </div>
-
 
 <script>
   document.addEventListener("DOMContentLoaded", function (event) {
