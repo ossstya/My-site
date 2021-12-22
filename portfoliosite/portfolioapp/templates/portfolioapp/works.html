@@ -60,6 +60,7 @@
                 </div>
                 <!--/row-->
             </div>
+            {% if work.id >= 7 and work.id < 10 %}
             <div class="item">
                 <div class="row">
                     {% for work in works %}
@@ -80,7 +81,7 @@
                 </div>
                 <!--/row-->
             </div>
-
+            {% endif %}
             <!--/item-->
         </div>
         <!--/carousel-inner-->
