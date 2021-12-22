@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Work, About
+from .models import Work, About, Contact
 # Create your views here.
 
 
@@ -20,6 +20,9 @@ def work(request, pk):
 
 
 def contact(request):
+    Contact.objects.create(email=request.POST.get("email_input"),
+                           message=request.POST.get("message_input"),
+                           subject=request.POST.get("subject_input"))
 
 
     return render(request, 'portfolioapp/contact.html')
