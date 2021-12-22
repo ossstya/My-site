@@ -1,16 +1,14 @@
 import requests, json
+from dotenv import load_dotenv
+import os
 
-database_id = "616319df9d0e4d2398a691faa01ebcd6"
-
-token = "secret_TXQWDUtoSVb9DtxYE58zoMa6ZWsRDBHgXeUOce3vK35"
-
-
+load_dotenv()
 
 def save_contact_at_notion_database(email: str,
                                     message: str,
                                     subject: str,
-                                    database_id: str = "616319df9d0e4d2398a691faa01ebcd6",
-                                    token: str = "secret_TXQWDUtoSVb9DtxYE58zoMa6ZWsRDBHgXeUOce3vK35") -> None:
+                                    database_id: str = os.environ.get("NOTION_DATABASE_ID"),
+                                    token: str = os.environ.get("NOTION_TOKEN")) -> None:
     headers = {
         "Authorization": "Bearer " + token,
         "Content-Type": "application/json",
@@ -64,10 +62,3 @@ def save_contact_at_notion_database(email: str,
     data = json.dumps(newPageData)
     res = requests.request("POST", notionUrl, headers=headers, data=data)
 
-
-
-
-email = "sels2.0.3.1@gmail.com"
-print(email.split("@")[0])
-
-# save_at_notion_database_contact(database_id, token)
