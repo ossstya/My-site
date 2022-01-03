@@ -15,8 +15,8 @@
           <p>{{work.body}}</p>
 
           <blockquote>
-            <p>"{{ work.body_title }}"</p>
-            <small class="pull-right">Irina Martin</small>
+            <p>"{{ work.quote }}"</p>
+            <small class="pull-right">{{ work.quote_author }}</small>
           </blockquote>
         </div>
       </div>
@@ -27,11 +27,11 @@
         <div class="row">
           <div class="col-xs-12 col-md-6">
             <img src="{{ work.first_body_image.url }}" class="img-responsive" alt="">
-            <p>Menphis skyline</p>
+            <p>{{ work.text_of_first_body_image }}</p>
           </div>
           <div class="col-xs-12 col-md-6">
             <img src="{{ work.second_body_image.url }}" class="img-responsive" alt="">
-            <p>Menphis skyline</p>
+            <p>{{ work.text_of_second_body_image }}</p>
           </div>
         </div>
       </div>

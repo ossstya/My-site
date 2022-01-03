@@ -30,7 +30,7 @@
                       <div class="card-container card-container-lg">
                         <h4>00{{work.id}}/006</h4>
                         <h3>{{ work.title }}</h3>
-                        <p>{{work.id}}</p>
+                        <p>{{work.title_of_card}}</p>
                         <a href="{% url 'work' work.id %}" title="" class="btn btn-default">Discover</a>
                       </div>
                     </div>
@@ -51,7 +51,7 @@
                     <div class="card-container">
                       <h4>00{{work.id}}/006</h4>
                       <h3>{{ work.title }}</h3>
-                      <p>{{work.id}}</p>
+                      <p>{{work.title_of_card}}</p>
                       <a href="{% url 'work' work.id %}" class="btn btn-default">Discover</a>
                     </div>
                   </div>

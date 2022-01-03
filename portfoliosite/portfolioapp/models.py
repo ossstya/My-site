@@ -5,7 +5,9 @@ class Work(models.Model):
     title = models.CharField(max_length=150)
     title_of_card = models.CharField(max_length=100)
     body = models.TextField()
-    title_image = models.ImageField(upload_to='work_title_image/',
+    quote = models.TextField()
+    quote_author = models.CharField(max_length=100)
+    title_image = models.ImageField(upload_to='work_title_image/' + str(title),
                                     null=True,
                                     blank=True)
     upper_image = models.ImageField(upload_to='work_title_image/',
@@ -14,13 +16,14 @@ class Work(models.Model):
     first_body_image = models.ImageField(upload_to='work_body_image/',
                                          null=True,
                                          blank=True)
+    text_of_first_body_image = models.CharField(max_length=80)
     second_body_image = models.ImageField(upload_to='work_body_image/',
                                           null=True,
                                           blank=True)
+    text_of_second_body_image = models.CharField(max_length=80)
     third_body_image = models.ImageField(upload_to='work_body_image/',
                                          null=True,
                                          blank=True)
-    body_title = models.TextField()
     date_created = models.DateTimeField(auto_now_add=True,
                                         help_text="The date and time the work was added.")
 
